@@ -6,20 +6,21 @@ This program simulates a dice throw using randint, and it is possible to change 
 
 import random
 
+
 class Dice(object):
 
-    def __init__(self, side):
-        self.side = int(side)
+    def __init__(self, dice_side):
+        self.side = int(dice_side)
 
     def throw(self):
         print("The result is:", random.randint(1, self.side))
 
-    def changeSide(self, side):
-        self.side = side
+    def changeSide(self, dice_side):
+        self.side = dice_side
 
 flag = True
 
-while(flag):
+while flag:
     try:
         side = int(input("Enter the number of sides: "))
         dice = Dice(side)
@@ -30,7 +31,7 @@ while(flag):
         continue
 
     finally:
-        while(True):
+        while True:
             answer = input("Do you want to continue? Y/n\n")
             if answer == 'Y' or answer == 'y':
                 break
